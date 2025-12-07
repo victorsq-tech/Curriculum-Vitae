@@ -4,8 +4,8 @@
 
 Esta página foi construída com HTML e CSS e hospedada diretamente pelo GitHub Pages. Clique no link abaixo para visualizar a versão web completa:
 
-[**Acessar Currículo Completo**](https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO/)
-*(Lembre-se de substituir o link acima pelo seu URL real)*
+[**Acessar Currículo Completo**](https://victorsq-tech.github.io/Curriculum-Vitae/)
+
 
 ---
 
