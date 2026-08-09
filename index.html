@@ -1,278 +1,227 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo - Victor dos Santos Queiroz</title>
-    
-    <style>
-        /* ================= RESET E BASE ================= */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo — Victor dos Santos Queiroz</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #52606d;
+      --accent: #155e75;
+      --line: #cbd5e1;
+      --paper: #ffffff;
+      --screen: #eef2f5;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.5;
-        }
+    * { box-sizing: border-box; }
 
-        .resume-container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 300px 1fr; 
-            min-height: 100vh;
-        }
+    @page { size: A4; margin: 0; }
+    html, body { margin: 0; padding: 0; }
 
-        /* ================= SIDEBAR ================= */
-        .sidebar {
-            background-color: #e3eef6;
-            padding: 30px 20px;
-            color: #2c3e50;
-            border-right: 1px solid #d1d9e6;
-        }
+    body {
+      background: var(--screen);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.2pt;
+      line-height: 1.35;
+    }
 
-        .photo-area {
-            width: 150px;
-            height: 150px;
-            background-color: #bccddb;
-            border-radius: 50%;
-            margin: 0 auto 30px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: bold;
-            border: 4px solid white;
-            background-image: url('placeholder-photo.jpg'); /* Adicione sua foto aqui */
-            background-size: cover;
-        }
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 18px auto;
+      padding: 16mm 17mm 13mm;
+      background: var(--paper);
+      box-shadow: 0 5px 24px rgba(15, 23, 42, .12);
+    }
 
-        .sidebar h3 {
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 11px;
+      margin-bottom: 12px;
+    }
 
-        .contact-info p {
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 25pt;
+      line-height: 1.05;
+      letter-spacing: -.4px;
+    }
 
-        /* ================= MAIN CONTENT ================= */
-        .main-content {
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-        }
+    .headline {
+      margin: 5px 0 9px;
+      color: var(--accent);
+      font-size: 12.5pt;
+      font-weight: 700;
+    }
 
-        header {
-            background-color: #104e7a;
-            color: white;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 15px;
+      color: var(--muted);
+      font-size: 9.3pt;
+    }
 
-        header h1 {
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .contact a, a { color: var(--accent); text-decoration: none; }
+    .contact a:hover, a:hover { text-decoration: underline; }
+    .contact-links { flex-basis: 100%; }
+    .contact-links a + a { margin-left: 15px; }
 
-        header p.subtitle {
-            font-size: 1.1rem;
-            margin-top: 10px;
-            font-weight: 300;
-            color: #dceefb;
-        }
+    section { margin-top: 12px; }
 
-        header p.summary {
-            margin-top: 20px;
-            font-size: 0.95rem;
-            max-width: 600px;
-        }
+    .section-title {
+      margin: 0 0 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 10.5pt;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
 
-        .content-body { padding: 30px; }
+    p { margin: 0; }
+    .summary { color: #293845; max-width: 174mm; font-size: 10.3pt; }
+    .entry { margin-bottom: 9px; }
+    .entry:last-child { margin-bottom: 0; }
 
-        .section-title {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #104e7a;
-            border-bottom: 2px solid #104e7a;
-            margin-bottom: 20px;
-            margin-top: 10px;
-        }
+    .entry-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
 
-        .job-item, .education-item, .cert-item { margin-bottom: 25px; }
+    .entry-title { font-weight: 700; font-size: 10.7pt; }
+    .entry-meta { color: var(--muted); font-size: 9.4pt; text-align: right; white-space: nowrap; }
+    .entry-subtitle { color: var(--accent); font-size: 9.5pt; font-weight: 600; }
 
-        .job-title { font-weight: bold; font-size: 1.1rem; }
+    ul { margin: 3px 0 0 17px; padding: 0; color: #344454; }
+    li { margin: 1px 0; }
 
-        .company-date {
-            color: #104e7a;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18mm;
+      align-items: start;
+    }
 
-        ul.job-details, ul.cert-details {
-            padding-left: 20px;
-            color: #555;
-            font-size: 0.95rem;
-        }
+    .skills { color: #344454; margin: 0; padding-left: 16px; }
+    .skill-category { margin-bottom: 7px; }
+    .skill-category:last-child { margin-bottom: 0; }
+    .skill-category strong { color: var(--ink); display: block; margin-bottom: 1px; }
+    .skill-list { margin-top: 0; }
+    .credential { font-size: 9.5pt; color: #344454; }
 
-        /* ================= BARRAS DE PROGRESSO ================= */
-        .skill-item { margin-bottom: 15px; }
+    @media print {
+      body { background: #fff; }
+      .resume { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
 
-        .skill-name {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .progress-container {
-            width: 100%;
-            background-color: #c4d7e5;
-            border-radius: 5px;
-            height: 8px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background-color: #104e7a;
-            border-radius: 5px;
-        }
-
-        /* ================= RESPONSIVIDADE ================= */
-        @media (max-width: 768px) {
-            .resume-container { grid-template-columns: 1fr; margin: 0; box-shadow: none; }
-            .sidebar { order: 2; border-right: none; }
-            .main-content { order: 1; }
-            header { text-align: center; padding: 30px 15px; }
-        }
-    </style>
+    @media screen and (max-width: 760px) {
+      .resume { width: 100%; min-height: 0; margin: 0; padding: 28px 22px; }
+      .columns { grid-template-columns: 1fr; gap: 0; }
+      .entry-heading { display: block; }
+      .entry-meta { text-align: left; margin-top: 1px; }
+      .contact-links { display: block; }
+      .contact-links a { display: block; margin: 2px 0 !important; }
+    }
+  </style>
 </head>
-
 <body>
+  <main class="resume">
+    <header>
+      <h1>Victor dos Santos Queiroz</h1>
+      <p class="headline">Estudante de Big Data | Dados, Tecnologia e Agronegócio</p>
+      <div class="contact" aria-label="Informações de contato">
+        <span>Bebedouro/SP</span>
+        <span>(11) 95222-0853</span>
+        <a href="mailto:victordossq@gmail.com">victordossq@gmail.com</a>
+        <div class="contact-links">
+          <a href="https://github.com/victorsq-tech" target="_blank" rel="noopener">GitHub: github.com/victorsq-tech</a>
+          <a href="https://www.linkedin.com/in/victor-dos-santos-queiroz-3351b1406/" target="_blank" rel="noopener">LinkedIn: linkedin.com/in/victor-dos-santos-queiroz-3351b1406</a>
+        </div>
+      </div>
+    </header>
 
-    <div class="resume-container">
-        
-        <aside class="sidebar">
-            <div class="photo-area">FOTO</div>
+    <section>
+      <h2 class="section-title">Resumo profissional</h2>
+      <p class="summary">Estudante de Big Data no Agronegócio, com experiência em rotinas administrativas, organização de informações e elaboração de planilhas e relatórios. Desenvolve conhecimentos em programação, bancos de dados, relatórios e desenvolvimento web, buscando aplicar tecnologia na resolução de problemas e na melhoria de processos.</p>
+    </section>
 
-            <h3>Contato</h3>
-            <div class="contact-info">
-                <p>📍 Bebedouro/SP</p>
-                <p>📞 (11) 95222-0853</p>
-                <p>✉️ victordossq@gmail.com</p>
+    <section>
+      <h2 class="section-title">Experiência profissional</h2>
+      <div class="entry">
+        <div class="entry-heading">
+          <div class="entry-title">Vitral Alumínio e Vidro — Auxiliar de Almoxarifado</div>
+          <div class="entry-meta">2022 – 2024</div>
+        </div>
+        <ul>
+          <li>Controle de entrada e saída de produtos.</li>
+          <li>Organização de estoque.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-heading">
+          <div class="entry-title">Supra Componentes e Perfis — Assistente Administrativo</div>
+          <div class="entry-meta">2024 – Atual</div>
+        </div>
+        <ul>
+          <li>Integração de sistema ERP.</li>
+          <li>Atendimento de clientes e suporte às demandas internas de TI.</li>
+          <li>Auxílio na organização de rotas diárias.</li>
+          <li>Criação de relatórios e desenvolvimento de projetos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Formação acadêmica</h2>
+      <div class="entry">
+        <div class="entry-heading">
+          <div class="entry-title">Tecnólogo em Big Data no Agronegócio</div>
+          <div class="entry-meta">2024 – Cursando</div>
+        </div>
+        <div class="entry-subtitle">Fatec Jorge Caram Sabbag — Bebedouro/SP</div>
+      </div>
+    </section>
+
+    <div class="columns">
+      <div>
+        <section>
+          <h2 class="section-title">Competências técnicas</h2>
+          <div class="skills">
+            <div class="skill-category">
+              <strong>Análise de dados</strong>
+              <ul class="skill-list"><li>Python</li><li>Java</li><li>C++</li></ul>
             </div>
-
-            <h3>Habilidades</h3>
-            <div class="skill-item">
-                <div class="skill-name"><span>Excel / Power BI - Intermediario</span><span>75%</span></div>
-                <div class="progress-container"><div class="progress-bar" style="width: 75%;"></div></div>
+            <div class="skill-category">
+              <strong>Bancos de dados</strong>
+              <ul class="skill-list"><li>SQL</li></ul>
             </div>
-            <div class="skill-item">
-                <div class="skill-name"><span>SQL / Banco de Dados</span><span>40%</span></div>
-                <div class="progress-container"><div class="progress-bar" style="width: 40%;"></div></div>
+            <div class="skill-category">
+              <strong>Relatórios</strong>
+              <ul class="skill-list"><li>Power BI</li><li>Excel</li><li>Git e GitHub</li></ul>
             </div>
-            <div class="skill-item">
-                <div class="skill-name"><span>Python / Análise</span><span>50%</span></div>
-                <div class="progress-container"><div class="progress-bar" style="width: 50%;"></div></div>
+            <div class="skill-category">
+              <strong>Desenvolvimento web</strong>
+              <ul class="skill-list"><li>HTML, CSS e JavaScript</li><li>PHP</li></ul>
             </div>
+          </div>
+        </section>
+      </div>
 
-            <h3>Idiomas</h3>
-            <div class="skill-item">
-                <div class="skill-name"><span>Português</span><span>Nativo</span></div>
-                <div class="progress-container"><div class="progress-bar" style="width: 100%;"></div></div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-name">
-                    <span>Inglês (C1 Avançado)</span>
-                    <span>63/100</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 75%;"></div>
-                </div>
-            </div>
-
-        </aside>
-
-        <main class="main-content">
-            
-            <header>
-                <h1>Victor dos Santos Queiroz</h1>
-                <p class="subtitle">Analista de Dados & Inovação no Agronegócio</p>
-                <p class="summary">
-                    Profissional dedicado, com interesse em tecnologia e inovação no agronegócio.
-                    Busco oportunidades para aplicar conhecimentos em Big Data e contribuir para o desenvolvimento do setor.
-                </p>
-            </header>
-
-            <div class="content-body">
-                
-                <div class="section-title">Histórico Profissional</div>
-                <div class="job-item">
-                    <div class="job-title">Auxiliar Administrativo</div>
-                    <div class="company-date">
-                        <span>Vitral Alumínio e Vidro / Supra Componentes</span>
-                        <span>2022 - Atual</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Controle de planilhas e relatórios administrativos.</li>
-                        <li>Atendimento ao cliente e suporte técnico interno.</li>
-                        <li>Auxílio no planejamento de rotas comerciais.</li>
-                    </ul>
-                </div>
-
-                <div class="section-title">Formação Acadêmica</div>
-                <div class="education-item">
-                    <div class="job-title">Tecnólogo em Big Data no Agronegócio</div>
-                    <div class="company-date">
-                        <span>Fatec Jorge Caram Sabbag (Bebedouro)</span>
-                        <span>2024 - Cursando</span>
-                    </div>
-                </div>
-
-                <div class="section-title">Certificações</div>
-                
-                <div class="cert-item">
-                    <div class="job-title">EF SET English Certificate (C1 Advanced)</div>
-                    <div class="company-date">
-                        <span>EF Standard English Test</span>
-                        <span>Emissão: Dez/2025</span>
-                    </div>
-                    <ul class="cert-details">
-                        <li>Pontuação Geral: <strong>63/100 (Proficiência Eficaz)</strong></li>
-                        <li>Destaque: Leitura (C2 - Domínio Pleno) e Compreensão Oral (C1).</li>
-                        <li><a href="https://cert.efset.org/pt/NNJXnn" target="_blank" style="color: #104e7a; text-decoration: none;">Ver Credencial Online &nearr;</a></li>
-                    </ul>
-                </div>
-
-                <div class="section-title">Ferramentas</div>
-                <p style="color: #555;">
-                    • Power BI, Excel Avançado<br>
-                    • Python (Pandas), SQL<br>
-                </p>
-
-            </div>
-        </main>
+      <div>
+        <section>
+          <h2 class="section-title">Idiomas</h2>
+          <p class="credential"><strong>Português:</strong> nativo<br><strong>Inglês:</strong> C1 — EF SET English Certificate, 63/100 (C1 Advanced)<br><span>Credencial: <a href="https://cert.efset.org/pt/NNJXnn" target="_blank" rel="noopener">cert.efset.org/pt/NNJXnn</a></span></p>
+        </section>
+      </div>
     </div>
-
+  </main>
 </body>
 </html>
